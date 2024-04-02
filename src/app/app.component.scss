@@ -1,0 +1,73 @@
+/* Estilos con colores pasteles para el componente AppComponent */
+
+// Colores pasteles
+$color-primario: #8b9dc3; // Azul pastel
+$color-secundario: #9bbbad; // Verde pastel
+$color-fondo: #f0f0f0; // Gris claro
+$color-rosa-pastel: #ffb6c1; // Rosa pastel
+
+/* Contenedor principal */
+.dashboard-container {
+    background-color: $color-fondo; 
+    height: 100vh;
+}
+
+.example-spacer {
+    flex: 1 1 auto;
+}
+
+.menu {
+    background-color: $color-rosa-pastel; // Cambiamos el color de fondo a rosa pastel
+}
+
+/* Barra lateral */
+.dashboard-sidebar {
+    background-color: $color-primario; 
+    padding: 20px; 
+    width: 200px;
+}
+
+/* Contenido principal */
+.example-sidenav-content {
+    background-color: white; // Fondo blanco para el contenido principal
+    display: flex;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+}
+
+.mat-toolbar {
+    background-color: $color-secundario;
+    padding: 10px;
+}
+
+.mat-menu {
+    background-color: $color-rosa-pastel; // Cambiamos el color de fondo del menú a rosa pastel
+}
+
+/* Iconos */
+.example-icon {
+    color: #555; // Iconos en tono gris oscuro
+}
+
+.favorite-icon {
+    color: #e57373; // Icono de favorito en tono rojo pastel
+}
+
+/* Menú vertical */
+.vertical-menu {
+    display: flex;
+    flex-direction: column; // Muestra el menú verticalmente
+}
+
+/* Espaciador flexible en la barra de herramientas */
+.example-spacer {
+    flex: 1 1 auto;
+}
+
+/* Estilos para el contenedor de ejemplo */
+.example-container {
+    width: 500px;
+    height: 300px;
+    border: 1px solid rgba(0, 0, 0, 0.5);
+}
