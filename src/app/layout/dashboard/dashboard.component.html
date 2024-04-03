@@ -1,57 +1,54 @@
-  <!-- TOOLBAR -->
-    <mat-toolbar color="primary">
-    <button (click)="toggleDrawer()" mat-icon-button class="example-icon"
-                aria-label="Example icon-button with menu icon">
-                <mat-icon>menu</mat-icon>
-            </button>
-            <span>Estudio Juridico Malvina Aramayo Capacitaciones en Derecho Penal Familia Civil</span>
-            <span class="example-spacer"></span>
-            <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
-                <mat-icon>favorite</mat-icon>
-            </button>
-            <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">
-                <mat-icon>share</mat-icon>
-            </button>
-        </mat-toolbar>
-        <!-- TOOLBAR -->
-        <mat-drawer-container class="example-container" autosize>
+<!-- TOOLBAR -->
+<mat-toolbar color="primary">
+    <button (click)="toggleDrawer()" mat-icon-button class="example-icon" aria-label="Toggle Drawer">
+        <mat-icon>menu</mat-icon>
+    </button>
+    <span>Estudio Juridico Malvina Aramayo Capacitaciones en Derecho Penal Familia Civil</span>
+    <span class="example-spacer"></span>
+    <button mat-icon-button class="example-icon favorite-icon" aria-label="Favorite">
+        <mat-icon>favorite</mat-icon>
+    </button>
+    <button mat-icon-button class="example-icon" aria-label="Share">
+        <mat-icon>share</mat-icon>
+    </button>
+</mat-toolbar>
+<!-- TOOLBAR -->
+
+<mat-drawer-container class="example-container" autosize>
     <mat-drawer #drawer class="example-sidenav" mode="side">
-        <p>Auto-resizing sidenav</p>
+        <p>Investigación & Desarrollo</p>
         <ng-container *ngIf="showFiller">
             <p>Lorem, ipsum dolor sit amet consectetur.</p>
         </ng-container>
         <button (click)="showFiller = !showFiller" mat-raised-button>
-            Toggle extra text
+            MISION ACADEMICA
         </button>
     </mat-drawer>
 
+    <!-- CONTENIDO -->
     <div class="example-sidenav-content">
         <button type="button" mat-button (click)="drawer.toggle()">
-            Toggle sidenav
+            MENU
         </button>
         <mat-nav-list>
-
-<a #homeLink="routerLinkActive" routerLinkActive [activated]="homeLink.isActive" routerLink="home"
+            <a #homeLink="routerLinkActive" routerLinkActive [activated]="homeLink.isActive" routerLink="home"
                 mat-list-item>Inicio</a>
-
-<a #usersLink="routerLinkActive" routerLinkActive [activated]="usersLink.isActive" routerLink="users"
+            <a #usersLink="routerLinkActive" routerLinkActive [activated]="usersLink.isActive" routerLink="users"
                 mat-list-item>Usuarios</a>
-
-<a #cursosLink="routerLinkActive" routerLinkActive [activated]="cursosLink.isActive" routerLink="cursos"
+            <a #cursosLink="routerLinkActive" routerLinkActive [activated]="cursosLink.isActive" routerLink="cursos"
                 mat-list-item>Cursos</a>
-
-<a #alumnoLink="routerLinkActive" routerLinkActive [activated]="alumnoLink.isActive" routerLink="/alumno/"
-    mat-list-item>Alumnos</a>
-                
-<a (click)="logout()" mat-list-item>Cerrar sesion</a>
+            <a #alumnoLink="routerLinkActive" routerLinkActive [activated]="alumnoLink.isActive" routerLink="/alumno/"
+                mat-list-item>Alumnos</a>
+            <a (click)="logout()" mat-list-item>Cerrar sesión</a>
         </mat-nav-list>
     </div>
-       <!-- CONTENIDO -->
-    <div class="example-sidenav-content">
-      
-        <div class="p-3">
-            <router-outlet></router-outlet>
-             </div>
-    </div>
     <!-- CONTENIDO -->
+
+    <!-- CONTENIDO ADICIONAL -->
+    <div class="example-sidenav-content">
+       <div class="p-3"></div>
+    </div>
+    <!-- CONTENIDO ADICIONAL -->
+
+    <router-outlet></router-outlet>
 </mat-drawer-container>

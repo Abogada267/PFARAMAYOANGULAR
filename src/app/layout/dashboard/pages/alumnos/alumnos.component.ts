@@ -1,15 +1,18 @@
-import { Component, OnInit } from '@angular/core';
-import { MatDialog } from '@angular/material/dialog';
-import { PageEvent } from '@angular/material/paginator';
-import { Router } from "@angular/router";
-import { AlumnosService } from '../../../../../app/core/services/alumnos.service';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-alumnos',
+  template: `
+    <h2>Listado de Alumnos</h2>
+    <div *ngFor="let alumno of alumnos">
+      <p>{{ alumno.apellido }}, {{ alumno.nombre }} - {{ alumno.correo }}</p>
+    </div>
+    <app-entrada-datos (datosGuardados)="guardarDatos($event)"></app-entrada-datos>
+  `,
   templateUrl: './alumnos.component.html',
   styleUrls: ['./alumnos.component.scss']
 })
-export class AlumnosComponent implements OnInit {
+export class AlumnosComponent  {
   dataSource: any; 
   displayedColumns: string[] = ['id', 'name', 'email']; 
   alumnoFormData: any = {};
@@ -18,52 +21,22 @@ export class AlumnosComponent implements OnInit {
   totalItems: number = 0;
   pageSize: number = 5;
 
-  constructor(
-    private router: Router,
-    public dialog: MatDialog,
-    private AlumnosService: AlumnosService
-  ) { }
+   alumnos: {apellido: string, nombre: string, correo: string}[] = [];
 
-  ngOnInit() {
-    
+  guardarDatos(datos: {apellido: string, nombre: string, correo: string}) {
+    this.alumnos.push(datos);
+  
   }
 
-  updateHomeName(event: any): void {
-    this.AlumnoNameInput = (event.target as HTMLInputElement).value;
-  }
-
-  navegarAotraPagina(): void {
-    this.router.navigate(['../Alumnos']);
-  }
-
-  onSubmitAlumno(): void {
-    this.AlumnosService.guardarAlumno(this.alumnoFormData).subscribe(
-      (response: any) => {
-        console.log('Alumno guardado correctamente:', response);
-      },
-      (error: any) => {
-        console.error('Error al guardar el alumno:', error);
-      }
-    );
-  }
-
-  onCreate(): void {
+ onPage(event: any) {
+   
+ }
+  onSubmitAlumno() {
    
   }
-
-  onEdit(product: any) {
-    
-  }
-
-  onDelete(id: number): void {
-    if (confirm('¿Está seguro?')) {
-    
-    }
-  }
-
-  onPage(event: PageEvent): void {
-    console.log('Página actual:', event.pageIndex);
-    console.log('Elementos por página:', event.pageSize);
-  }
 }
+   
+  
+
+  
 

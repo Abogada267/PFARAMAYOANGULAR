@@ -1,57 +1,10 @@
-<!DOCTYPE html>
-<html lang="es">
+<h2>Listado de Alumnos</h2>
+<div *ngFor="let alumno of alumnos">
+  <p>{{ alumno.apellido }}, {{ alumno.nombre }} - {{ alumno.correo }}</p>
+</div>
+<app-entrada-datos (datosGuardados)="guardarDatos($event)"></app-entrada-datos>
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <style>
-    body {
-      display: flex;
-      justify-content: space-around;
-      align-items: center;
-      height: 100vh;
-      margin: 0;
-    }
-
-    .example-card {
-      width: 300px;
-      display: flex;
-      flex-direction: column;
-      position: relative;
-    }
-
-    .example-card img {
-      width: 80%;
-      height: 100px;
-      object-fit: cover;
-    }
-
-    .card-description {
-      padding: 10px;
-      text-align: center;
-    }
-
-    .button-container {
-      display: flex;
-      justify-content: flex-end;
-      margin-top: auto;
-    }
-
-    .inscribirme-button {
-      background-color: blue;
-      color: white;
-      padding: 5px 10px;
-      border: none;
-      cursor: pointer;
-    }
-  </style>
-</head>
-
-<body>
-  </body>
-  
-  </html>
 
 
 <div class="mb-3"></div>

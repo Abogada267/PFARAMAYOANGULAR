@@ -22,6 +22,7 @@ import { UserDetailComponent } from '../dashboard/pages/users/pages/user-detail/
 import { AlumnosSearchComponent } from './pages/alumnos/alumnos-search/alumnos-search.component';
 import { AlumnosComponent } from './pages/alumnos/alumnos.component';
 import { AlumnosFormComponent } from './pages/alumnos/components/alumnos-form/alumnos-form.component';
+import { EntradaDatosComponent } from './pages/alumnos/entrada-datos.component';
 import { CursosComponent } from './pages/cursos/cursos.component';
 import { HomeComponent } from './pages/home/home.component';
 import { UsersComponent } from './pages/users/users.component';
@@ -38,7 +39,8 @@ import { UsersComponent } from './pages/users/users.component';
     CursosComponent,
     HomeComponent,
     AlumnosSearchComponent,
-    AlumnosFormComponent
+    AlumnosFormComponent,
+    EntradaDatosComponent
     
      
     
@@ -74,11 +76,12 @@ import { UsersComponent } from './pages/users/users.component';
     MatCardModule,
     RouterModule,
     RouterLink,
-    RouterLinkActive
+    RouterLinkActive,
+    MatInputModule
     
   ],
   exports: [
-  DashboardComponent,AlumnosComponent,CursosComponent, HomeComponent,AlumnosSearchComponent,AlumnosFormComponent
+  DashboardComponent,AlumnosComponent,CursosComponent, HomeComponent,AlumnosSearchComponent,AlumnosFormComponent,EntradaDatosComponent
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })

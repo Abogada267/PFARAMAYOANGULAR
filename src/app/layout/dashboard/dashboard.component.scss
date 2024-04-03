@@ -1,3 +1,19 @@
-.dashboard-container {
-    height: 100vh;
+.toolbar {
+    display: flex;
+    align-items: center;
+}
+
+.button-container {
+    margin-left: auto;
+    display: flex;
+}
+
+.button-container a,
+.button-container button {
+    margin-left: 10px;
+}
+
+p {
+text-decoration-color: rgb(1, 12, 12);
+background-color: aqua;
 }
