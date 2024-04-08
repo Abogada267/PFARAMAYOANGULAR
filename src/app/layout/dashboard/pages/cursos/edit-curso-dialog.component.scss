@@ -1,0 +1,40 @@
+body {
+    background-color: #1E3C67;
+    /* Azul marino claro */
+    color: #000;
+    /* Color de letra negro oscuro */
+    font-family: Arial, sans-serif;
+}
+
+form {
+    width: 7rem;
+    margin: 0 auto;
+}
+
+
+input[type="text"],
+textarea {
+    width: 100%;
+    padding: 0.5rem;
+    margin-bottom: 1rem;
+    border: 1px solid #000;
+    /* Borde negro */
+    box-sizing: border-box;
+    background-color: #fff;
+    /* Fondo blanco */
+}
+
+button {
+    background-color: #fff;
+    /* Fondo blanco */
+    color: #000;
+    /* Color de letra negro oscuro */
+    padding: 0.5rem 1rem;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #ccc;
+    /* Fondo gris claro al pasar el mouse */
+}

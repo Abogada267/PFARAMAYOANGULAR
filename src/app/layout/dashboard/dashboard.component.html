@@ -1,9 +1,10 @@
 <!-- TOOLBAR -->
+
 <mat-toolbar color="primary">
     <button (click)="toggleDrawer()" mat-icon-button class="example-icon" aria-label="Toggle Drawer">
         <mat-icon>menu</mat-icon>
     </button>
-    <span>Estudio Juridico Malvina Aramayo Capacitaciones en Derecho Penal Familia Civil</span>
+    <span >Estudio Juridico Malvina Aramayo Capacitaciones en Derecho Penal Familia Civil </span>
     <span class="example-spacer"></span>
     <button mat-icon-button class="example-icon favorite-icon" aria-label="Favorite">
         <mat-icon>favorite</mat-icon>
@@ -16,9 +17,9 @@
 
 <mat-drawer-container class="example-container" autosize>
     <mat-drawer #drawer class="example-sidenav" mode="side">
-        <p>Investigación & Desarrollo</p>
+        <p appEstiloHermanos >Investigación & Desarrollo</p>
         <ng-container *ngIf="showFiller">
-            <p>Lorem, ipsum dolor sit amet consectetur.</p>
+            <p >Lorem, ipsum dolor sit amet consectetur.</p>
         </ng-container>
         <button (click)="showFiller = !showFiller" mat-raised-button>
             MISION ACADEMICA
@@ -30,11 +31,12 @@
         <button type="button" mat-button (click)="drawer.toggle()">
             MENU
         </button>
+        
         <mat-nav-list>
             <a #homeLink="routerLinkActive" routerLinkActive [activated]="homeLink.isActive" routerLink="home"
                 mat-list-item>Inicio</a>
             <a #usersLink="routerLinkActive" routerLinkActive [activated]="usersLink.isActive" routerLink="users"
-                mat-list-item>Usuarios</a>
+                mat-list-item >Usuarios</a>
             <a #cursosLink="routerLinkActive" routerLinkActive [activated]="cursosLink.isActive" routerLink="cursos"
                 mat-list-item>Cursos</a>
             <a #alumnoLink="routerLinkActive" routerLinkActive [activated]="alumnoLink.isActive" routerLink="/alumno/"

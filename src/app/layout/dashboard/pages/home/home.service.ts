@@ -1,27 +1,13 @@
 import { Injectable } from '@angular/core';
-import { of } from 'rxjs';
-import { delay, finalize } from 'rxjs/operators';
-import { LoadingService } from '../../../../core/services/loading.service';
 import { Home } from '../home/home';
 
 @Injectable()
 export class HomeService {
   home: Home[] = [];
 
-  constructor(private loadingService: LoadingService) {}
+  constructor() {}
 
-  getHome() {
-    this.loadingService.setIsLoading(true);
-    const home: Home[] = [
-      { id: 1, name: 'Malvina' },
-      { id: 2, name: 'Graciela' },
-      { id: 3, name: 'Auricular' }
-    ];
-    return of(home).pipe(
-      delay(1500),
-      finalize(() => this.loadingService.setIsLoading(false))
-    );
-  }
+  
 
   createProduct(data: Home) {
     this. home= [...this.home, { ...data, id: this.home.length + 1 }];

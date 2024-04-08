@@ -1,9 +1,8 @@
 import { Component, OnInit } from "@angular/core";
 import { MatDialog } from "@angular/material/dialog";
 import { Router } from "@angular/router";
+import { CursosService } from "../../../../core/services/cursos.service";
 import { Home } from '../home/home';
-
-
 
 @Component({
   selector: 'app-home',
@@ -17,11 +16,26 @@ export class HomeComponent implements OnInit {
   
   constructor(
     private router: Router,
-    public dialog: MatDialog
+    public dialog: MatDialog,
+    private cursosService: CursosService
   ) {}
 
   ngOnInit() {
    
+  }
+
+  inscribirse(cursoId: number): void {
+    this.cursosService.inscribirseEnCurso(cursoId).subscribe(
+      () => {
+        console.log('Inscripción exitosa');
+        this.router.navigate(['../alumnos']);
+       
+      },
+      error => {
+        console.error('Error al inscribirse:', error);
+      
+      }
+    );
   }
 
   updateHomeName(event: any): void {
@@ -29,7 +43,7 @@ export class HomeComponent implements OnInit {
   }
 
   navegarAotraPagina(): void {
-    this.router.navigate(['../cursos']); 
+    this.router.navigate(['../alumnos']); 
   }
 
   onCreate(): void {
@@ -46,4 +60,5 @@ export class HomeComponent implements OnInit {
     }
   }
 }
+
 

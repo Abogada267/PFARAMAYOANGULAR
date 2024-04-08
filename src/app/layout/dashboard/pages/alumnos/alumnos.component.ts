@@ -1,42 +1,65 @@
-import { Component } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { DatosGuardados } from '../../../../shared.models';
+import { Cursos } from '../cursos/models';
+
+interface Alumno {
+  apellido: string;
+  nombre: string;
+  correo: string;
+}
 
 @Component({
   selector: 'app-alumnos',
-  template: `
-    <h2>Listado de Alumnos</h2>
-    <div *ngFor="let alumno of alumnos">
-      <p>{{ alumno.apellido }}, {{ alumno.nombre }} - {{ alumno.correo }}</p>
-    </div>
-    <app-entrada-datos (datosGuardados)="guardarDatos($event)"></app-entrada-datos>
-  `,
   templateUrl: './alumnos.component.html',
-  styleUrls: ['./alumnos.component.scss']
+  styleUrls: ['./alumnos.component.scss'],
 })
-export class AlumnosComponent  {
-  dataSource: any; 
-  displayedColumns: string[] = ['id', 'name', 'email']; 
-  alumnoFormData: any = {};
-  AlumnoNameInput: string = '';
-  AlumnoData: any;
-  totalItems: number = 0;
-  pageSize: number = 5;
+export class AlumnosComponent implements OnInit {
+  @Input() cursosData: Cursos[] = [];
+  @Input() inscripciones: any[] = []; 
+  nuevoAlumno: any;
+  listaAlumnos: Alumno[] = [];
+  displayedColumns: string[] = ['apellido', 'nombre', 'correo'];
+   totalItems: unknown;
+  pageSize: unknown;
+  cursoId: any;
+  nombreDelCurso?: string;
 
-   alumnos: {apellido: string, nombre: string, correo: string}[] = [];
+  constructor( ) {}
 
-  guardarDatos(datos: {apellido: string, nombre: string, correo: string}) {
-    this.alumnos.push(datos);
-  
+  ngOnInit(): void {
+    this.cargarCursos();
   }
 
- onPage(event: any) {
-   
- }
+
+  cargarCursos(): void {
+   }
+
+  recibirDatosGuardados(datos: DatosGuardados) {
+    const nuevoAlumno: Alumno = {
+      apellido: datos.apellido,
+      nombre: datos.nombre,
+      correo: datos.correo,
+    };
+    this.listaAlumnos.push(nuevoAlumno);
+
+    if (this.cursoId !== undefined) {
+      const inscripcion = { alumno: nuevoAlumno, cursoId: this.cursoId };
+      this.inscripciones.push(inscripcion);
+    }
+  }
+
   onSubmitAlumno() {
+    
+  }
+
+  onPage(event: any) {
    
+  }
+
+  nombreDelCursoPorId(cursoId: number): string {
+    const curso = this.cursosData.find((curso) => curso.id === cursoId);
+    return curso ? curso.name : 'Curso no encontrado';
   }
 }
-   
-  
 
-  
 

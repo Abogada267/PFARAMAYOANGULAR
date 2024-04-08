@@ -1,0 +1,21 @@
+    <h2>Editando Curso</h2>
+<form>
+<div>
+<label for="nombre">Nombre:</label>
+<input type="text" id="nombre" [(ngModel)]="formularioDatos.nombre" name="nombre">
+</div>
+        <div>
+    <label for="descripcion">Descripción:</label>
+    <input type="text"  id="descripcion"[(ngModel)]="curso.descripcion" name="descripcion">
+        </div>
+
+        <div>
+     <label for="imagenUrl">URL de la imagen:</label>
+     <input type="text" id="imagenUrl" [(ngModel)]="curso.imagenUrl" name="imagenUrl">
+        </div>
+
+
+<button mat-button (click)="guardarCambios()">Guardar</button>
+<button mat-button (click)="cancelar()">Cancelar</button>
+    
+    </form>

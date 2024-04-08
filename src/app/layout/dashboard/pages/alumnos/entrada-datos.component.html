@@ -1,0 +1,18 @@
+<div class="input-container">
+    <label for="apellido">Apellido:</label>
+    <input type="text" id="apellido" name="apellido" [(ngModel)]="apellido" placeholder="Ingrese su apellido">
+    <label for="nombre">Nombre:</label>
+    <input type="text" id="nombre" name="nombre" [(ngModel)]="nombre" placeholder="Ingrese su nombre">
+    <label for="correo">Correo Electrónico:</label>
+    <input type="email" id="correo" name="correo" [(ngModel)]="correo" placeholder="Ingrese su correo electrónico">
+    <button class="save-button" (click)="guardar()">Guardar</button>
+</div>
+
+<div class="alumnos-list">
+    <h2>Listado de Alumnos</h2>
+    <ul>
+        <li *ngFor="let alumno of listaAlumnos">
+            {{ alumno.apellido }}, {{ alumno.nombre }} - {{ alumno.correo }}
+        </li>
+    </ul>
+</div>

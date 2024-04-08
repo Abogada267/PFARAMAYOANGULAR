@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { PageEvent } from '@angular/material/paginator';
+import { Router } from '@angular/router';
 import { User } from '../users/models';
 
 @Component({
@@ -31,8 +32,8 @@ export class UsersComponent {
     },
   ];
 
+  constructor(private router: Router) {} 
   onPage(event: PageEvent): void {
-    // Aquí puedes manejar el evento de cambio de página, si es necesario
     console.log(event);
   }
 
@@ -58,4 +59,9 @@ export class UsersComponent {
       console.error('Datos de usuario no válidos:', userFormData);
     }
   }
+
+  navegarAotraPagina(): void {
+    this.router.navigate(['cursos']);
+  }
 }
+

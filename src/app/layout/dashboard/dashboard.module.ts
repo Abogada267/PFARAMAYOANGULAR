@@ -5,6 +5,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatCard, MatCardModule } from '@angular/material/card';
 import { MatOption } from '@angular/material/core';
 import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatDialogModule } from '@angular/material/dialog';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatIcon, MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
@@ -24,6 +25,7 @@ import { AlumnosComponent } from './pages/alumnos/alumnos.component';
 import { AlumnosFormComponent } from './pages/alumnos/components/alumnos-form/alumnos-form.component';
 import { EntradaDatosComponent } from './pages/alumnos/entrada-datos.component';
 import { CursosComponent } from './pages/cursos/cursos.component';
+import { EditCursoDialogComponent } from './pages/cursos/edit-curso-dialog.component';
 import { HomeComponent } from './pages/home/home.component';
 import { UsersComponent } from './pages/users/users.component';
 
@@ -40,8 +42,9 @@ import { UsersComponent } from './pages/users/users.component';
     HomeComponent,
     AlumnosSearchComponent,
     AlumnosFormComponent,
-    EntradaDatosComponent
-    
+    EntradaDatosComponent,
+    EditCursoDialogComponent
+       
      
     
   ],
@@ -77,11 +80,13 @@ import { UsersComponent } from './pages/users/users.component';
     RouterModule,
     RouterLink,
     RouterLinkActive,
-    MatInputModule
+    MatInputModule,
+    FormsModule,
+    MatDialogModule,
     
   ],
   exports: [
-  DashboardComponent,AlumnosComponent,CursosComponent, HomeComponent,AlumnosSearchComponent,AlumnosFormComponent,EntradaDatosComponent
+  DashboardComponent,AlumnosComponent,CursosComponent, HomeComponent,AlumnosSearchComponent,AlumnosFormComponent,EntradaDatosComponent, EditCursoDialogComponent
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })

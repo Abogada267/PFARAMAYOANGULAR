@@ -1,8 +1,7 @@
 export interface Cursos  {
   id: number;
-  curseName: string;
-  name: string;
-  actions: string;
- 
-  
+  name: string; 
+  descripcion: string;
+  imagenUrl: string;
+  cantidadInscriptos: number; 
 }

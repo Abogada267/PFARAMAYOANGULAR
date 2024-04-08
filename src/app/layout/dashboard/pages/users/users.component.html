@@ -2,14 +2,12 @@
 <div class="mb-3">
     <app-user-form (userSubmitted)="onUserSubmitted($event)"></app-user-form>
 </div>
-
+<a routerLink="/cursos">Ir a Cursos</a>
 
 <pre>{{ roles | json }}</pre>
 
 <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
-    <!--- Note that these columns can be defined in any order.
-        The actual rendered columns are set as a property on the row definition" -->
-
+   
     <!-- ID Column -->
     <ng-container matColumnDef="id">
         <!-- HEADER -->
@@ -55,7 +53,7 @@
         <!-- CELDA -->
         <td mat-cell *matCellDef="let user">
             <button [routerLink]="user.id" color="accent" mat-icon-button>
-                <mat-icon>visibility</mat-icon>
+    <mat-icon>visibility</mat-icon>
             </button>
             <button (click)="onDeleteUser(user)" mat-icon-button color="warn">
                 <mat-icon>delete</mat-icon>
@@ -68,9 +66,7 @@
     <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
 </table>
 
-<!-- [length] DEBERIA SER IGUAL A LA CANTIDAD TODAL DE ELEMENTOS EN LA BASE DE DATOS-->
-<!-- [pageSize] DEBERIAMOS COLOCAR CUANTOS ELEMENTOS SE MUESTRAN POR PAGINA (PER PAGE)-->
-<!-- [pageSizeOptions] DEBERIAMOS COLOCAR CUANTOS ELEMENTOS SE MUESTRAN POR PAGINA (PER PAGE)-->
+
 
 <mat-paginator (page)="onPage($event)" [length]="totalItems" [pageSize]="pageSize" [pageSizeOptions]="[5, 10, 25, 100]"
     aria-label="Select page">
