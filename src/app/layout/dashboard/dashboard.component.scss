@@ -1,20 +1,68 @@
-
-.toolbar {
+/* Estilos para el mat-toolbar */
+.mat-toolbar {
     display: flex;
     align-items: center;
+    background-color: #3f51b5;
+    /* Color de fondo */
+    color: white;
+    /* Color del texto */
+    padding: 0 16px;
+    /* Ajustar el relleno según sea necesario */
 }
 
-.button-container {
-    margin-left: auto;
+/* Estilos para los elementos de texto dentro del mat-toolbar */
+.mat-toolbar span {
+    margin-right: 20px;
+    /* Espacio entre los elementos de texto */
+}
+
+/* Estilos para el mat-nav-list */
+.mat-nav-list {
     display: flex;
+    /* Cambia la visualización de la lista a flexbox */
+    flex-direction: row;
+    /* Organiza los elementos de la lista en una fila */
+    background-color: #303f9f;
+    /* Color de fondo */
+    color: white;
+    /* Color del texto */
+    padding: 0 16px;
+    /* Ajustar el relleno según sea necesario */
 }
 
-.button-container a,
-.button-container button {
-    margin-left: 10px;
+/* Estilos para los enlaces dentro del mat-nav-list */
+.mat-nav-list a {
+    text-decoration: none;
+    /* Quita la subrayado de los enlaces */
+    color: white;
+    /* Color del texto */
+    margin-right: 10px;
+    /* Espacio entre los elementos de la lista */
 }
 
-p {
-text-decoration-color: rgb(1, 12, 12);
-background-color: aqua;
+/* Estilos para el contenido del mat-drawer */
+.example-sidenav-content {
+    background-color: #91969b;
+    /* Color de fondo */
+    text-decoration: solid;
+    /* Otra propiedad de texto */
+    text-transform: uppercase;
+    /* Otra propiedad de texto */
+    height: auto;
+    /* Altura automática */
+    padding: 20px;
+    /* Ajustar el relleno según sea necesario */
+}
+
+/* Otros estilos según sea necesario */
+.button {
+    text-decoration: solid;
+    text-overflow: initial;
+}
+
+.mat-drawer-content.mat-drawer.content {
+    background-color: #3f51b5;
+    /* Color de fondo */
+    margin: 10px;
+    /* Margen exterior */
 }

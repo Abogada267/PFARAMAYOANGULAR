@@ -27,6 +27,7 @@ import { EntradaDatosComponent } from './pages/alumnos/entrada-datos.component';
 import { CursosComponent } from './pages/cursos/cursos.component';
 import { EditCursoDialogComponent } from './pages/cursos/edit-curso-dialog.component';
 import { HomeComponent } from './pages/home/home.component';
+import { QuienessomosComponent } from './pages/quienessomos/quienessomos.component';
 import { UsersComponent } from './pages/users/users.component';
 
 
@@ -43,7 +44,8 @@ import { UsersComponent } from './pages/users/users.component';
     AlumnosSearchComponent,
     AlumnosFormComponent,
     EntradaDatosComponent,
-    EditCursoDialogComponent
+    EditCursoDialogComponent,
+    QuienessomosComponent,
        
      
     
@@ -84,9 +86,10 @@ import { UsersComponent } from './pages/users/users.component';
     FormsModule,
     MatDialogModule,
     
+    
   ],
   exports: [
-  DashboardComponent,AlumnosComponent,CursosComponent, HomeComponent,AlumnosSearchComponent,AlumnosFormComponent,EntradaDatosComponent, EditCursoDialogComponent
+  DashboardComponent,AlumnosComponent,CursosComponent, HomeComponent,AlumnosSearchComponent,AlumnosFormComponent,EntradaDatosComponent, EditCursoDialogComponent,QuienessomosComponent
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })

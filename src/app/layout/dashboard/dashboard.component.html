@@ -1,5 +1,3 @@
-<!-- TOOLBAR -->
-
 <mat-toolbar color="primary">
     <button (click)="toggleDrawer()" mat-icon-button class="example-icon" aria-label="Toggle Drawer">
         <mat-icon>menu</mat-icon>
@@ -27,30 +25,26 @@
     </mat-drawer>
 
     <!-- CONTENIDO -->
-    <div class="example-sidenav-content">
+    
+        <div class="example-sidenav-content" >
         <button type="button" mat-button (click)="drawer.toggle()">
             MENU
         </button>
-        
-        <mat-nav-list>
+                <mat-nav-list>
+            <a #quienessomosLink="routerLinkActive" routerLinkActive [activated]="quienessomosLink.isActive" routerLink="quienessomos"
+                mat-list-item>QUIENES SOMOS</a>
             <a #homeLink="routerLinkActive" routerLinkActive [activated]="homeLink.isActive" routerLink="home"
                 mat-list-item>Inicio</a>
             <a #usersLink="routerLinkActive" routerLinkActive [activated]="usersLink.isActive" routerLink="users"
                 mat-list-item >Usuarios</a>
             <a #cursosLink="routerLinkActive" routerLinkActive [activated]="cursosLink.isActive" routerLink="cursos"
                 mat-list-item>Cursos</a>
-            <a #alumnoLink="routerLinkActive" routerLinkActive [activated]="alumnoLink.isActive" routerLink="/alumno/"
+            <a #alumnoLink="routerLinkActive" routerLinkActive [activated]="alumnoLink.isActive" routerLink="alumnos"
                 mat-list-item>Alumnos</a>
             <a (click)="logout()" mat-list-item>Cerrar sesión</a>
         </mat-nav-list>
+        
     </div>
-    <!-- CONTENIDO -->
-
-    <!-- CONTENIDO ADICIONAL -->
-    <div class="example-sidenav-content">
-       <div class="p-3"></div>
-    </div>
-    <!-- CONTENIDO ADICIONAL -->
-
-    <router-outlet></router-outlet>
+       
 </mat-drawer-container>
+<router-outlet></router-outlet>

@@ -5,10 +5,12 @@ import { AlumnosDetailComponent } from './layout/dashboard/pages/alumnos/alumnos
 import { AlumnosComponent } from './layout/dashboard/pages/alumnos/alumnos.component';
 import { CursosComponent } from './layout/dashboard/pages/cursos/cursos.component';
 import { HomeComponent } from './layout/dashboard/pages/home/home.component';
+import { QuienessomosComponent } from './layout/dashboard/pages/quienessomos/quienessomos.component';
 import { UsersComponent } from './layout/dashboard/pages/users/users.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: '/home', pathMatch: 'full' },
+  { path: '', redirectTo: 'quienessomos', pathMatch: 'full' },
+  { path: 'quienessomos', component: QuienessomosComponent },
   { path: 'home', component: HomeComponent },
   { path: 'users', component: UsersComponent },
   { path: 'cursos', component: CursosComponent },
