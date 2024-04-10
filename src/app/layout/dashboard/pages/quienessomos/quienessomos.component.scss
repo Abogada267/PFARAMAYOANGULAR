@@ -1,4 +1,16 @@
 .quienessomos {
-    width: 100%;
+    display: flex;
+    justify-content: center;
     
 }
+
+
+    mat-grid-list {
+        width: 100%;
+       
+    }
+
+        mat-form-field {
+            margin-right: 10px;
+            background-color: cornsilk;
+        }

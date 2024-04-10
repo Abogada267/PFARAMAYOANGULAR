@@ -1,8 +1,9 @@
-<mat-toolbar color="primary">
+<mat-toolbar color="primary" class="custom-toolbar">
     <button (click)="toggleDrawer()" mat-icon-button class="example-icon" aria-label="Toggle Drawer">
         <mat-icon>menu</mat-icon>
     </button>
-    <span >Estudio Juridico Malvina Aramayo Capacitaciones en Derecho Penal Familia Civil </span>
+    <span class="example-spacer"></span>
+    <span>Estudio Jurídico Malvina Aramayo Capacitaciones en Derecho Penal Familia Civil</span>
     <span class="example-spacer"></span>
     <button mat-icon-button class="example-icon favorite-icon" aria-label="Favorite">
         <mat-icon>favorite</mat-icon>
@@ -11,40 +12,38 @@
         <mat-icon>share</mat-icon>
     </button>
 </mat-toolbar>
-<!-- TOOLBAR -->
 
-<mat-drawer-container class="example-container" autosize>
-    <mat-drawer #drawer class="example-sidenav" mode="side">
-        <p appEstiloHermanos >Investigación & Desarrollo</p>
+<mat-drawer-container class="example-container">
+    <mat-drawer #drawer class="example-sidenav" mode="over">
+        <p appEstiloHermanos>Investigación & Desarrollo</p>
         <ng-container *ngIf="showFiller">
-            <p >Lorem, ipsum dolor sit amet consectetur.</p>
+            <p>Lorem, ipsum dolor sit amet consectetur.</p>
         </ng-container>
         <button (click)="showFiller = !showFiller" mat-raised-button>
-            MISION ACADEMICA
+            MISIÓN ACADÉMICA
         </button>
     </mat-drawer>
 
     <!-- CONTENIDO -->
-    
-        <div class="example-sidenav-content" >
+
+    <div class="example-sidenav-content">
         <button type="button" mat-button (click)="drawer.toggle()">
-            MENU
+            MENÚ
         </button>
-                <mat-nav-list>
-            <a #quienessomosLink="routerLinkActive" routerLinkActive [activated]="quienessomosLink.isActive" routerLink="quienessomos"
-                mat-list-item>QUIENES SOMOS</a>
+        <mat-nav-list>
+            <a #quienessomosLink="routerLinkActive" routerLinkActive [activated]="quienessomosLink.isActive"
+                routerLink="quienessomos" mat-list-item>QUIÉNES SOMOS</a>
             <a #homeLink="routerLinkActive" routerLinkActive [activated]="homeLink.isActive" routerLink="home"
                 mat-list-item>Inicio</a>
             <a #usersLink="routerLinkActive" routerLinkActive [activated]="usersLink.isActive" routerLink="users"
-                mat-list-item >Usuarios</a>
+                mat-list-item>Usuarios</a>
             <a #cursosLink="routerLinkActive" routerLinkActive [activated]="cursosLink.isActive" routerLink="cursos"
                 mat-list-item>Cursos</a>
             <a #alumnoLink="routerLinkActive" routerLinkActive [activated]="alumnoLink.isActive" routerLink="alumnos"
                 mat-list-item>Alumnos</a>
             <a (click)="logout()" mat-list-item>Cerrar sesión</a>
         </mat-nav-list>
-        
     </div>
-       
+
 </mat-drawer-container>
 <router-outlet></router-outlet>
