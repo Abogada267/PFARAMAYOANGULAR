@@ -1,30 +1,23 @@
-<h2>Listado de Alumnos</h2>
 <table class="table">
   <thead>
     <tr>
-      <th>Completa tus datos</th>
-     
+      <th>Apellido</th>
+      <th>Nombre</th>
+      <th>Correo</th>
     </tr>
   </thead>
   <tbody>
-    <tr *ngFor="let inscripcion of inscripciones">
-      <td>{{ nombreDelCursoPorId(inscripcion.cursoId) }}</td>
-      <td>{{ inscripcion.alumno.apellido }}</td>
-      <td>{{ inscripcion.alumno.nombre }}</td>
-      <td>{{ inscripcion.alumno.correo }}</td>
+    
+    <tr *ngFor="let alumno of listaAlumnos">
+      <td>{{ alumno.apellido }}</td>
+      <td>{{ alumno.nombre }}</td>
+      <td>{{ alumno.correo }}</td>
     </tr>
   </tbody>
 </table>
 
+
 <app-entrada-datos (datosGuardados)="recibirDatosGuardados($event)"></app-entrada-datos>
 
-<div class="mb-3"></div>
 
-
-<mat-paginator
- (page)="onPage($event)"
-  [length]="totalItems"
-   [pageSize]="pageSize" 
-   [pageSizeOptions]="[5, 10, 25, 100]"
-  aria-label="Seleccionar página">
-</mat-paginator>
+<button type="button" class="save-button" (click)="inscribirse()">inscribirse</button>

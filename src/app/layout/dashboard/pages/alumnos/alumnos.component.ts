@@ -30,7 +30,10 @@ export class AlumnosComponent implements OnInit {
     this.cargarCursos();
   }
 
-
+ inscribirse(): void {
+  
+   
+  }
   cargarCursos(): void {
    }
 
@@ -41,6 +44,8 @@ export class AlumnosComponent implements OnInit {
       correo: datos.correo,
     };
     this.listaAlumnos.push(nuevoAlumno);
+
+    
 
     if (this.cursoId !== undefined) {
       const inscripcion = { alumno: nuevoAlumno, cursoId: this.cursoId };

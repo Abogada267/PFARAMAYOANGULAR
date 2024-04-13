@@ -1,36 +1,48 @@
 import { Component, EventEmitter, Output } from '@angular/core';
-import { DatosGuardados } from '../../../../shared.models';
+import { Inscripcion, InscripcionesService } from '../../../../core/services/inscripciones.service';
+import { DatosGuardados } from '../../../../shared/models/DatosGuardados';
 
 @Component({
   selector: 'app-entrada-datos',
   templateUrl: './entrada-datos.component.html',
-  styleUrls: ['./entrada-datos.component.scss'] 
+  styleUrls: ['./entrada-datos.component.scss']
 })
 export class EntradaDatosComponent {
   @Output() datosGuardados: EventEmitter<DatosGuardados> = new EventEmitter<DatosGuardados>();
 
-  apellido: string = '';
-  nombre: string = '';
-  correo: string = '';
-listaAlumnos: any;
+  constructor(private inscripcionesService: InscripcionesService) {}
 
-  guardar() {
+  inscribirse(): void {
+    const curso = (document.getElementById('curso') as HTMLInputElement).value;
+    const apellido = (document.getElementById('apellido') as HTMLInputElement).value;
+    const nombre = (document.getElementById('nombre') as HTMLInputElement).value;
+    const correo = (document.getElementById('correo') as HTMLInputElement).value;
+
+    const datos: DatosGuardados = {
+      apellido: apellido,
+      nombre: nombre,
+      correo: correo
+    };
+    this.datosGuardados.emit(datos);
+const inscripcion: Inscripcion = { 
+      cursoId: 1, 
+      alumno: {
+        apellido: apellido,
+        nombre: nombre,
+        correo: correo
+      }
+};
+  
+    this.inscripcionesService.agregarInscripcion(inscripcion);
     
-    if (this.apellido && this.nombre && this.correo) {
-      const datos: DatosGuardados = {
-        apellido: this.apellido,
-        nombre: this.nombre,
-        correo: this.correo
-      };
-      this.datosGuardados.emit(datos);
-      
-     
-      this.apellido = '';
-      this.nombre = '';
-      this.correo = '';
-    } else {
-    
-      alert('Por favor ingrese todos los campos.');
-    }
+    (document.getElementById('curso') as HTMLInputElement).value = '';
+    (document.getElementById('apellido') as HTMLInputElement).value = '';
+    (document.getElementById('nombre') as HTMLInputElement).value = '';
+    (document.getElementById('correo') as HTMLInputElement).value = '';
   }
 }
+
+
+
+
+

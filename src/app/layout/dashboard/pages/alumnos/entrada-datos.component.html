@@ -1,61 +1,32 @@
-<!DOCTYPE html>
-<html lang="es">
+<h2>Inscripción de Alumnos</h2>
+<form id="formularioInscripcion" (submit)="inscribirse()">
+    <label for="curso">Curso:</label>
+    <input type="text" id="curso" name="curso"><br><br>
+    <label for="apellido">Apellido:</label>
+    <input type="text" id="apellido" name="apellido"><br><br>
+    <label for="nombre">Nombre:</label>
+    <input type="text" id="nombre" name="nombre"><br><br>
+    <label for="correo">Correo:</label>
+    <input type="email" id="correo" name="correo"><br><br>
+    <button type="submit" class="save-button">Inscribirse</button>
+</form>
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Listado de Alumnos</title>
-</head>
-
-<body>
-    <h2>Listado de Alumnos</h2>
-    <table class="table">
-        <thead>
-            <tr>
-                <th>Curso</th>
-                <th>Apellido</th>
-                <th>Nombre</th>
-                <th>Correo</th>
-            </tr>
-        </thead>
-        <tbody id="listaAlumnos">
-            <!-- Aquí se llenará dinámicamente la lista de alumnos -->
-        </tbody>
-    </table>
-
-    <h2>Inscripción de Alumnos</h2>
-    <form id="formularioInscripcion">
-        <label for="curso">Curso:</label>
-        <input type="text" id="curso" name="curso"><br><br>
-        <label for="apellido">Apellido:</label>
-        <input type="text" id="apellido" name="apellido"><br><br>
-        <label for="nombre">Nombre:</label>
-        <input type="text" id="nombre" name="nombre"><br><br>
-        <label for="correo">Correo:</label>
-        <input type="email" id="correo" name="correo"><br><br>
-        <button type="submit">Inscribirse</button>
-    </form>
-
-    <script>
-        // Función para inscribir un alumno
-        function inscribirAlumno(event) {
-            event.preventDefault(); // Evitar el envío del formulario
-
-            // Obtener los valores del formulario
-            var curso = document.getElementById("curso").value;
-            var apellido = document.getElementById("apellido").value;
-            var nombre = document.getElementById("nombre").value;
-            var correo = document.getElementById("correo").value;
-
-            // Agregar el nuevo alumno a la lista
-            var listaAlumnos = document.getElementById("listaAlumnos");
-            var newRow = listaAlumnos.insertRow();
-            newRow.innerHTML = "<td>" + curso + "</td><td>" + apellido + "</td><td>" + nombre + "</td><td>" + correo + "</td>";
-        }
-n
-        // Agregar el evento de envío del formulario
-        document.getElementById("formularioInscripcion").addEventListener("submit", inscribirAlumno);
-    </script>
-</body>
-
-</html>
+<h2>Listado de Alumnos</h2>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Curso</th>
+            <th>Apellido</th>
+            <th>Nombre</th>
+            <th>Correo</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let inscripcion of inscripciones">
+            <td>{{ inscripcion.curso }}</td>
+            <td>{{ inscripcion.alumno.apellido }}</td>
+            <td>{{ inscripcion.alumno.nombre }}</td>
+            <td>{{ inscripcion.alumno.correo }}</td>
+        </tr>
+    </tbody>
+</table>
