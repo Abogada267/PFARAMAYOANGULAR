@@ -7,6 +7,7 @@ import { CursosDetailComponent } from './layout/dashboard/pages/cursos/cursos-de
 import { CursosComponent } from './layout/dashboard/pages/cursos/cursos.component';
 import { HomeComponent } from './layout/dashboard/pages/home/home.component';
 import { QuienessomosComponent } from './layout/dashboard/pages/quienessomos/quienessomos.component';
+import { ReduxComponent } from './layout/dashboard/pages/redux/redux.component';
 import { UsersComponent } from './layout/dashboard/pages/users/users.component';
 
 const routes: Routes = [
@@ -18,6 +19,8 @@ const routes: Routes = [
   { path: 'cursos/:cursosId', component: CursosDetailComponent },
   { path: 'alumnos', component: AlumnosComponent },
   { path: 'alumnos/:id', component: AlumnosDetailComponent },
+  { path: 'redux', component: ReduxComponent },
+
 ];
 
 @NgModule({

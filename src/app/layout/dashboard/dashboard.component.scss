@@ -1,76 +1,60 @@
-
 .mat-toolbar {
     display: flex;
     align-items: center;
     background-color: #3f51b5;
     color: white;
     padding: 0 16px;
-    
 }
-
 
 .mat-toolbar span {
     margin-right: 20px;
-  
 }
-
 
 .mat-nav-list {
     display: flex;
-   
     flex-direction: row;
-  
     background-color: #303f9f;
+     color: white;
    
-    color: white;
-    
     padding: 0 16px;
-   
 }
-
 
 .mat-nav-list a {
-   left: 100px;
     text-decoration: none;
-    color: rgb(211, 20, 20);
-    
+    color: white;
+    /* Letras blancas */
     margin-right: 10px;
-   
+    left: 100px;
+    /* Esto no tiene efecto en elementos <a> */
 }
-
 
 .example-sidenav-content {
     background-color: #91969b;
-
-    text-decoration: solid;
-    
+    /* Gris suave */
+    color: white;
+    /* Letras blancas */
     text-transform: uppercase;
-  
-    height: auto;
-    
     padding: 20px;
-   
 }
-
 
 .button {
     text-decoration: solid;
+    /* ¿Qué estilos quieres aplicar aquí? */
     text-overflow: initial;
+    /* Esto no es un atributo válido para text-decoration */
 }
 
 .mat-drawer-content.mat-drawer.content {
     background-color: #3f51b5;
-   
     margin: 10px;
-   
 }
 
-.app-quienessomos {
+.quienessomos {
     height: calc(100vh - 64px);
-   
-    overflow-y: auto;
-   
+     overflow-y: auto;
 }
+
 .custom-toolbar {
     height: 3cm;
+   
 }

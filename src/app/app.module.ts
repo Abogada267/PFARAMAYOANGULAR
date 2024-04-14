@@ -1,5 +1,5 @@
 import { HttpClientModule } from '@angular/common/http';
-import { CUSTOM_ELEMENTS_SCHEMA, Injector, NgModule } from '@angular/core';
+import { CUSTOM_ELEMENTS_SCHEMA, Injector, NgModule, isDevMode } from '@angular/core';
 import { createCustomElement } from '@angular/elements';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
@@ -23,6 +23,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RouterModule } from '@angular/router';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { StoreModule } from '@ngrx/store';
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 
 
 
@@ -63,7 +65,9 @@ import { AppComponent } from './app.component';
     ReactiveFormsModule,
     HttpClientModule,
     MatDialogModule,
-    MatGridListModule
+    MatGridListModule,
+    StoreModule.forRoot({}, {}),
+    StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: !isDevMode() })
     
        
     
