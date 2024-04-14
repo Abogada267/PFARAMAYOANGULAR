@@ -14,9 +14,9 @@
 
     
     <div *ngFor="let curso of cursosList" class="curso-item" [style.background-image]="'url(' + curso.imagenUrl + ')'">
-        <p>Numero de Identificación: {{ curso.id }}</p>
-        <p>Nombre: {{ curso.name }}</p>
-        <p>Precio Total: {{ curso.price }}</p>
+        <p>Codigo: {{ curso.id }}</p>
+        <p>Nombre del Curso: {{ curso.name }}</p>
+        <p>Valor en pesos: {{ curso.price }}</p>
         <button type="button" class="btn btn-outline-primary" [routerLink]="['/cursos', curso.name]">Detalle</button>
     </div>
 </div>
