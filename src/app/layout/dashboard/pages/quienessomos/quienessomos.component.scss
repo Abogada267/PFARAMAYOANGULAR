@@ -1,7 +1,27 @@
 .quienessomos {
-    display: flex;
-    justify-content: center;
-    
+    padding: 20px;
+    background-color: #f0f0f0;
+}
+
+.tile-text {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.contact-form {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.form-field {
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+button {
+    margin-top: 10px;
 }
 
 

@@ -16,18 +16,18 @@ export interface Tile {
 export class QuienessomosComponent {
   tiles: Tile[] = [
     {
-      text: 'Estudio Juridico con amplia trayectoria y renovada experiencia profesional',
+      text: 'ENSEÑANZA Y APRENDIZAJE EN TODAS LAS AREAS DEL DERECHO',
       cols: 3, rows: 1, color: 'lightblue'
     },
-    {text: 'Two', cols: 1, rows: 2, color: 'lightgreen'},
-    {text: 'Three', cols: 1, rows: 1, color: 'lightpink'},
-    {text: 'Four', cols: 2, rows: 1, color: '#DDBDF1'},
+    {text: 'DERECHO PENAL', cols: 1, rows: 2, color: 'lightgreen'},
+    {text: 'DERECHO DE FAMILIA', cols: 1, rows: 1, color: 'lightpink'},
+    {text: 'DERECHO DE SUCESIONES', cols: 2, rows: 1, color: '#DDBDF1'},
   ];
 
   selectedItem: { text: string; cols: number; rows: number; color: string; };
 
   constructor(private _snackBar: MatSnackBar) {
-     this.selectedItem = { text: 'Estudio Juridico con amplia trayectoria y renovada experiencia profesional', cols: 3, rows: 1, color: 'lightblue' };
+     this.selectedItem = { text: 'ENSEÑANZA Y APRENDIZAJE EN TODAS LAS AREAS DEL DERECHO', cols: 3, rows: 1, color: 'lightblue' };
   }
 
   openSnackBar(message: string, action: string) {

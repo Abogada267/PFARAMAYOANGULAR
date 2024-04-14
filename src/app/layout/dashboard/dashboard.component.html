@@ -17,7 +17,9 @@
     <mat-drawer #drawer class="example-sidenav" mode="over">
         <p appEstiloHermanos>Investigación & Desarrollo</p>
         <ng-container *ngIf="showFiller">
-            <p>Lorem, ipsum dolor sit amet consectetur.</p>
+            <p>El Instituto está integrado por investigadores/as formados/as; investigadores/as en formación y adscriptos/as.
+            Los/las investigadores formados/as son aquellos/as profesores/as que teniendo una dedicación exclusiva o semiexclusiva
+            se dedican en forma permanente a la investigación</p>
         </ng-container>
         <button (click)="showFiller = !showFiller" mat-raised-button>
             MISIÓN ACADÉMICA
@@ -34,7 +36,7 @@
             <a #quienessomosLink="routerLinkActive" routerLinkActive [activated]="quienessomosLink.isActive"
                 routerLink="quienessomos" mat-list-item>QUIÉNES SOMOS</a>
             <a #homeLink="routerLinkActive" routerLinkActive [activated]="homeLink.isActive" routerLink="home"
-                mat-list-item>Oferta Educativa</a>
+                mat-list-item>Oferta Educativa/DETALLE/INSCRIPCION</a>
             <a #usersLink="routerLinkActive" routerLinkActive [activated]="usersLink.isActive" routerLink="users"
                 mat-list-item>Usuarios</a>
             <a #cursosLink="routerLinkActive" routerLinkActive [activated]="cursosLink.isActive" routerLink="cursos"
