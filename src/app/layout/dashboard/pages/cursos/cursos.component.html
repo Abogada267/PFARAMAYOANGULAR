@@ -1,7 +1,9 @@
 <div class="cards-container">
     <button mat-button (click)="onCreate()">Agregar</button>
 
-    <mat-card *ngFor="let curso of cursosData" class="example-card">
+    
+    <mat-card *ngFor="let curso of cursosData" class="example-card"
+        [style.background-image]="'url(' + curso.imagenUrl + ')'">
         <img [src]="curso.imagenUrl" [alt]="curso.name">
         <div class="card-descripcion">
             <p>Nombre: {{ curso.name }}</p>
@@ -9,5 +11,13 @@
             <p>Cantidad de inscriptos: {{ curso.cantidadInscriptos }}</p>
         </div>
     </mat-card>
+
+    
+    <div *ngFor="let curso of cursosList" class="curso-item" [style.background-image]="'url(' + curso.imagenUrl + ')'">
+        <p>Numero de Identificación: {{ curso.id }}</p>
+        <p>Nombre: {{ curso.name }}</p>
+        <p>Precio Total: {{ curso.price }}</p>
+    </div>
 </div>
+
 

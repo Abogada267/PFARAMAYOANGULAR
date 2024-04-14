@@ -3,6 +3,7 @@ import { MatDialog } from '@angular/material/dialog';
 import { PageEvent } from '@angular/material/paginator';
 import { Router } from '@angular/router';
 import { CursosService } from '../../../../core/services/cursos.service';
+import { cursosList } from './cursos.mock';
 import { EditCursoDialogComponent } from './edit-curso-dialog.component';
 import { Cursos } from './models';
 
@@ -19,6 +20,9 @@ export class CursosComponent implements OnInit {
   pageIndex: number = 0;
   pageSize: number = 10;
   length: number = 0;
+  cursosList = cursosList;
+cursos: any;
+  
 
   constructor(
     private router: Router,
@@ -61,8 +65,7 @@ export class CursosComponent implements OnInit {
     });
 
     dialogRef.componentInstance.cursoActualizado.subscribe((nuevoCurso: Cursos) => {
-      // Agregar el nuevo curso a la lista de cursos
-      this.cursosData.push(nuevoCurso);
+       this.cursosData.push(nuevoCurso);
     });
 
     dialogRef.afterClosed().subscribe(result => {

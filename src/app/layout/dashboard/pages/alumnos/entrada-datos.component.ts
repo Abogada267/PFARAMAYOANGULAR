@@ -9,6 +9,7 @@ import { DatosGuardados } from '../../../../shared/models/DatosGuardados';
 })
 export class EntradaDatosComponent {
   @Output() datosGuardados: EventEmitter<DatosGuardados> = new EventEmitter<DatosGuardados>();
+inscripcion: any;
 
   constructor(private inscripcionesService: InscripcionesService) {}
 

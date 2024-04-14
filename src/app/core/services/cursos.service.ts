@@ -8,7 +8,7 @@ import { Cursos } from '../../layout/dashboard/pages/cursos/models';
   providedIn: 'root'
 })
 export class CursosService {
-   private apiUrl = 'http://localhost:3000';
+   private apiUrl = 'http://localhost:3000/api/cursos';
   private cursos: Cursos[] = [];
   
   constructor(private http: HttpClient) { }
