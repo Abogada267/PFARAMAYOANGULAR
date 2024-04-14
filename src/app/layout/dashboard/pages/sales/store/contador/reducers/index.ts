@@ -1,5 +1,6 @@
-import { createReducer, on } from '@ngrx/store';
-import { ContadorActions } from '../actions';
+import { createReducer, on } from "@ngrx/store";
+import { ContadorActions } from "../actions/index";
+
 
 export interface ContadorState {
   value: number;
@@ -7,12 +8,14 @@ export interface ContadorState {
 
 export const featureName = 'contador';
 
-const initialState: ContadorState = {
-  value: 0,
-};
+const initialState : ContadorState = {
+    value: 0,
+    
+}
 
 export const contadorReducer = createReducer<ContadorState>(
-  initialState,
+    initialState,
+    
   on(ContadorActions.incrementar, (state) => {
     return {
       ...state,

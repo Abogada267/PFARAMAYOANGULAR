@@ -21,10 +21,11 @@ import { MatTableModule } from '@angular/material/table';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RouterModule } from '@angular/router';
-import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
 import { StoreModule } from '@ngrx/store';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+import { AppRoutingModule } from './app-routing.module';
+import { AppComponent } from './app.component';
+import { appReducers } from './layout/dashboard/pages/sales/store';
 
 
 
@@ -66,7 +67,7 @@ import { StoreDevtoolsModule } from '@ngrx/store-devtools';
     HttpClientModule,
     MatDialogModule,
     MatGridListModule,
-    StoreModule.forRoot({}, {}),
+    StoreModule.forRoot(appReducers , {}),
     StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: !isDevMode() })
     
        

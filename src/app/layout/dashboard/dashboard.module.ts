@@ -29,6 +29,7 @@ import { CursosComponent } from './pages/cursos/cursos.component';
 import { EditCursoDialogComponent } from './pages/cursos/edit-curso-dialog.component';
 import { HomeComponent } from './pages/home/home.component';
 import { QuienessomosComponent } from './pages/quienessomos/quienessomos.component';
+import { ReduxComponent } from './pages/redux/redux.component';
 import { UsersComponent } from './pages/users/users.component';
 
 
@@ -47,6 +48,7 @@ import { UsersComponent } from './pages/users/users.component';
     EntradaDatosComponent,
     EditCursoDialogComponent,
     QuienessomosComponent,
+    ReduxComponent,
        
      
     
@@ -87,11 +89,13 @@ import { UsersComponent } from './pages/users/users.component';
     FormsModule,
     MatDialogModule,
     MatGridListModule,
+   
     
     
   ],
   exports: [
-  DashboardComponent,AlumnosComponent,CursosComponent, HomeComponent,AlumnosSearchComponent,AlumnosFormComponent,EntradaDatosComponent, EditCursoDialogComponent,QuienessomosComponent
+    DashboardComponent, AlumnosComponent, CursosComponent, HomeComponent, AlumnosSearchComponent, AlumnosFormComponent, EntradaDatosComponent, EditCursoDialogComponent, QuienessomosComponent,
+    ReduxComponent,
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })

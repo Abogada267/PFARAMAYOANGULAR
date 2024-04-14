@@ -1,8 +1,9 @@
 import { Component, OnDestroy } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { Observable, Subscription } from 'rxjs';
-import { ContadorActions } from '../../../../core/store/contador/actions';
-import { selectContadorValue } from '../../../../core/store/contador/selectors';
+import { ContadorActions } from '../sales/store/contador/actions';
+import { selectContadorValue } from '../sales/store/contador/selectors';
+
 
 @Component({
   selector: 'app-redux',
@@ -20,14 +21,7 @@ export class ReduxComponent implements OnDestroy {
   constructor(private store: Store) {
     this.value$ = this.store.select(selectContadorValue);
 
-    // this.contadorValueSubscription = this.store
-    //   .select(selectContadorValue)
-    //   .subscribe({
-    //     next: (value) => {
-    //       console.log('HOLA');
-    //       this.value = value;
-    //     },
-    //   });
+   
   }
 
   ngOnDestroy(): void {

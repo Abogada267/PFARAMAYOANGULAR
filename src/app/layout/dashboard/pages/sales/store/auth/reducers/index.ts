@@ -1,23 +1,24 @@
 import { createReducer, on } from '@ngrx/store';
-import { User } from '../../../../layout/dashboard/pages/users/models/index';
+import { Cursos } from '../../../../cursos/cursos.mock';
 import { AuthActions } from '../actions';
+
 
 export const featureName = 'auth';
 
 export interface AuthState {
-  user: User | null;
+  Cursos: Cursos | null;
 }
 
 const initialState: AuthState = {
-  user: null,
+  Cursos: null,
 };
 
 export const authReducer = createReducer(
   initialState,
-  on(AuthActions.setAuthUser, (state, action) => {
+  on(AuthActions.setAuthCursos, (state, action) => {
     return {
       ...state,
-      user: action.user,
+      cursos: action.Cursos,
     };
   }),
   on(AuthActions.logout, () => initialState)
