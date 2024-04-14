@@ -17,6 +17,7 @@
         <p>Numero de Identificación: {{ curso.id }}</p>
         <p>Nombre: {{ curso.name }}</p>
         <p>Precio Total: {{ curso.price }}</p>
+        <button type="button" class="btn btn-outline-primary" [routerLink]="['/cursos', curso.name]">Detalle</button>
     </div>
 </div>
 
