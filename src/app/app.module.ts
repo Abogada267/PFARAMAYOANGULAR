@@ -3,7 +3,7 @@ import { CUSTOM_ELEMENTS_SCHEMA, Injector, NgModule, isDevMode } from '@angular/
 import { createCustomElement } from '@angular/elements';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
-import { MatCard, MatCardModule } from '@angular/material/card';
+import { MatCardModule } from '@angular/material/card';
 import { MatOptionModule } from '@angular/material/core';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatDividerModule } from '@angular/material/divider';
@@ -27,11 +27,9 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { appReducers } from './layout/dashboard/pages/sales/store';
 
-
-
-
 @NgModule({
-  declarations: [],
+  declarations: [
+      ],
   
   imports: [
     BrowserModule,
@@ -48,7 +46,7 @@ import { appReducers } from './layout/dashboard/pages/sales/store';
     MatProgressSpinnerModule,
     MatCardModule,
     MatMenuModule,
-    AppRoutingModule, 
+    AppRoutingModule,
     MatDrawerContainer,
     MatDrawer,
     MatDrawerContent,
@@ -58,30 +56,23 @@ import { appReducers } from './layout/dashboard/pages/sales/store';
     ReactiveFormsModule,
     MatFormFieldModule,
     MatInputModule,
-       MatSelectModule,
+    MatSelectModule,
     MatOptionModule,
-       RouterModule,
-    MatCard,
-    FormsModule,
+    RouterModule,
+     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
     MatDialogModule,
     MatGridListModule,
     StoreModule.forRoot(appReducers , {}),
     StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: !isDevMode() })
-    
-       
-    
-    
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   providers: [],
   exports: [],
- 
 })
 export class AppModule { 
   title = 'Estudio Juridico Malvina Aramyo';
- 
 
   constructor(private injector: Injector) {}
 
@@ -90,6 +81,7 @@ export class AppModule {
     customElements.define('app-root', app);
   }
 }
+
 
 
 

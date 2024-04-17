@@ -49,6 +49,7 @@ import { UsersComponent } from './pages/users/users.component';
     EditCursoDialogComponent,
     QuienessomosComponent,
     ReduxComponent,
+    
        
      
     
@@ -89,13 +90,14 @@ import { UsersComponent } from './pages/users/users.component';
     FormsModule,
     MatDialogModule,
     MatGridListModule,
-   
+       
     
     
   ],
   exports: [
     DashboardComponent, AlumnosComponent, CursosComponent, HomeComponent, AlumnosSearchComponent, AlumnosFormComponent, EntradaDatosComponent, EditCursoDialogComponent, QuienessomosComponent,
     ReduxComponent,
+    
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })

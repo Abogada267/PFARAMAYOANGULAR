@@ -8,6 +8,8 @@ import { MatPaginator } from '@angular/material/paginator';
 import { MatSidenav, MatSidenavContainer, MatSidenavModule } from '@angular/material/sidenav';
 import { MatCell, MatHeaderCell, MatHeaderRow, MatRow, MatTableDataSource, MatTableModule } from '@angular/material/table';
 import { MatToolbarModule, MatToolbarRow } from '@angular/material/toolbar';
+import { ReactiveFormsComponent } from "./components/reactive-forms/reactive-forms.component";
+import { TemplateDrivenComponent } from './components/template-driven/template-driven.component';
 import { DashboardModule } from "./layout/dashboard/dashboard.module";
 
 @Component({
@@ -34,7 +36,9 @@ import { DashboardModule } from "./layout/dashboard/dashboard.module";
         MatIcon,
         MatPaginator,
         MatMenuModule,
-        DashboardModule
+        DashboardModule,
+      ReactiveFormsComponent,
+    TemplateDrivenComponent,
     ]
 })
 export class AppComponent {
