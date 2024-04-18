@@ -1,1 +1,22 @@
-<p>reactive-forms works!</p>
+<div class="bg-primary" style = "height: 100vh;"><div class=" card-body">
+
+
+<div class="conteniner w-50" >
+    <div class=" card">
+        
+<form [formGroup] = "userFormGroup" class="row">
+
+    <div class="col">
+
+        <input type="text" class="form-control" placeholder="First name" aria-label="First name">
+    </div>
+    <div class="col">
+        <input type="text" class="form-control" placeholder="Last name" aria-label="Last name">
+    </div>
+    <hr>
+    <pre> {{ userFormGroup.value |json}} </pre>
+</form>
+</div>
+</div>
+</div>
+</div>
